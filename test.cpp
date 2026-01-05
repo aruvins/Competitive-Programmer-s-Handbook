@@ -2,12 +2,19 @@
 
 using namespace std;
 
+long long factorial_mod(int n, int m) {
+    long long x = 1;
+    for (int i = 2; i <= n; i++) {
+        x = (x*i) % m;
+    }
+    return x % m;
+}
 
 int main() {
     // Solution comes here
-    int a = 123456789;
-    long long b = a * a;
-    cout << b << "\n";
+    int n;
+    int m;
 
-    return 0;
+    cin >> n >> m;
+    cout << factorial_mod(n, m) << "\n";
 }
